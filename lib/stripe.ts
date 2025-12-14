@@ -1,11 +1,13 @@
-import Stripe from "stripe";
+// Mock Stripe implementation for development
+const mockStripe = {
+  customers: {
+    list: async () => ({ data: [] })
+  },
+  checkout: {
+    sessions: {
+      create: async () => ({ url: '/order-success' })
+    }
+  }
+};
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not defined");
-}
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2025-03-31.basil",
-});
-
-export default stripe;
+export default mockStripe;
