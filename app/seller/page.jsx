@@ -115,7 +115,7 @@ const AddProduct = () => {
             </label>
             <input
               id="offer-price"
-              type="number"
+              type="number"hfff
               placeholder="0"
               className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40"
               onChange={(e) => setOfferPrice(e.target.value)}
